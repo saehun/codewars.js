@@ -1,6 +1,6 @@
 import { AxiosInstance } from 'axios';
 
-export class Fetcher<T> {
+class Fetcher<T> {
   private constructor(private readonly fetch: (client: AxiosInstance) => Promise<T>) {}
   static of<T>(fetch: (client: AxiosInstance) => Promise<T>) {
     return new Fetcher(fetch);
@@ -28,3 +28,5 @@ export class Fetcher<T> {
     return await this.fetch(client);
   }
 }
+
+export default Fetcher;

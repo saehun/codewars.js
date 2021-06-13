@@ -1,7 +1,7 @@
-import { credential } from './core/credentials';
-
-console.log('hello codewars.js');
+import { createHttpClient } from './core/http';
+import { signIn } from './sign-in';
 
 (async () => {
-  console.log(credential());
+  const client = createHttpClient();
+  signIn().tap(console.log).run(client);
 })();

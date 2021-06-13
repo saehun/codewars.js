@@ -18,6 +18,8 @@
     "email": "nycom13@gmail.com"
   },
   "devDependencies": {
+    "@types/chalk": "^2.2.0",
+    "@types/cheerio": "^0.22.29",
     "@types/debug": "^4.1.5",
     "@types/jest": "^26.0.23",
     "@types/node": "15.12.1",
@@ -35,6 +37,8 @@
     "@sindresorhus/is": "^4.0.1",
     "axios": "^0.21.1",
     "axios-cookiejar-support": "^1.0.1",
+    "chalk": "^4.1.1",
+    "cheerio": "^1.0.0-rc.10",
     "debug": "^4.3.1",
     "dotenv": "^10.0.0",
     "tough-cookie": "^4.0.0",

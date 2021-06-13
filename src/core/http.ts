@@ -1,6 +1,7 @@
 import axios, { AxiosRequestConfig, AxiosResponse } from 'axios';
 import axiosCookieJarSupport from 'axios-cookiejar-support';
 import { CookieJar } from 'tough-cookie';
+import * as chalk from 'chalk';
 import debug from 'debug';
 
 const log = debug('http');
@@ -28,6 +29,8 @@ export function createHttpClient() {
     baseURL: 'https://www.codewars.com',
     headers: { ...defaultHeaders },
     withCredentials: true,
+    validateStatus: status => status < 400 /** allow 302 */,
+    maxRedirects: 0,
   });
 
   axiosCookieJarSupport(instance);
@@ -41,11 +44,12 @@ export function createHttpClient() {
 
 function httpRequestLogger(cookieJar: CookieJar) {
   return (config: AxiosRequestConfig) => {
-    log('Request::URL::', config.url);
-    log('Request::Headers::', JSON.stringify(config.headers, undefined, 2));
-    log('Request::CookieJar::', JSON.stringify(cookieJar, undefined, 2));
+    const prefix = (more: string) => chalk.yellowBright('Request') + more;
+    log(prefix('::URL::'), `${chalk.redBright(config.method)}::`, config.url);
+    log(prefix('::Headers::'), JSON.stringify(config.headers, undefined, 2));
+    log(prefix('::CookieJar::'), JSON.stringify(cookieJar, undefined, 2));
     if (/post|put|patch/gi.test(config.method || '')) {
-      log('Requeset::Body::', JSON.stringify(config.data, undefined, 2));
+      log(prefix('::Body::'), JSON.stringify(config.data, undefined, 2));
     }
     return config;
   };
@@ -53,8 +57,9 @@ function httpRequestLogger(cookieJar: CookieJar) {
 
 function httpResponseLogger(cookieJar: CookieJar) {
   return (response: AxiosResponse) => {
-    log('Request::Headers::', JSON.stringify(response.headers, undefined, 2));
-    log('Request::CookieJar::', JSON.stringify(cookieJar, undefined, 2));
+    const prefix = (more: string) => chalk.greenBright('Response') + more;
+    log(prefix('::Headers::'), JSON.stringify(response.headers, undefined, 2));
+    log(prefix('::CookieJar::'), JSON.stringify(cookieJar, undefined, 2));
     return response;
   };
 }
