@@ -2,6 +2,7 @@ import Fetcher from './core/Fetcher';
 import { assert } from '@sindresorhus/is';
 import { credential } from './core/credentials';
 import { withDom } from './core/withDom';
+import { AuthToken } from './types';
 
 const fetchSignInPage = () =>
   Fetcher.of(async client => {
@@ -45,10 +46,19 @@ const fetchDashbaord = () =>
     return data;
   });
 
-const parseDashboard = withDom($ => {
+const parseDashboard = withDom<AuthToken>(($, html) => {
   return {
-    CSRFToken: '',
+    csrfToken: $('meta[name="csrf-token"]').attr()['content'],
+    jwt: parseJwt(),
   };
+
+  function parseJwt() {
+    const appSetUpStartAt = html.indexOf('App.setup({');
+    const currUserStartAt = html.indexOf('currentUser', appSetUpStartAt);
+    const parsed = /JSON.parse\((.*?)\),/.exec(html.slice(currUserStartAt));
+    if (parsed == null) throw new Error('Parse dashbaord failed');
+    return JSON.parse(JSON.parse(parsed[1])).jwt;
+  }
 });
 
 function signIn() {
@@ -60,9 +70,14 @@ function signIn() {
 }
 
 /**
- * Export
+ * Main export
  */
 export default signIn;
+
+/**
+ * Test export
+ */
 export const __test__ = {
   parseAuthenticityToken,
+  parseDashboard,
 };
