@@ -2,7 +2,7 @@ import Fetcher from './core/Fetcher';
 import { AuthToken, KataInfo, Language } from './types';
 import * as yup from 'yup';
 
-function pickKata(authToken: AuthToken, language: Language = 'javascript') {
+function seekKata(authToken: AuthToken, language: Language = 'javascript') {
   return Fetcher.of(async client => {
     const { data } = await client.get(
       `https://www.codewars.com/trainer/peek/${language}/default?dequeue=true`,
@@ -37,4 +37,4 @@ const schema = yup.object().shape({
   href: yup.string().required(),
 });
 
-export default pickKata;
+export default seekKata;
