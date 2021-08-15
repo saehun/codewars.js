@@ -1,11 +1,11 @@
 import Fetcher from './core/Fetcher';
-import { AuthToken, KataInfo } from './types';
+import { AuthToken, KataInfo, Language } from './types';
 import * as yup from 'yup';
 
-function pickKata(authToken: AuthToken) {
+function pickKata(authToken: AuthToken, language: Language = 'javascript') {
   return Fetcher.of(async client => {
     const { data } = await client.get(
-      'https://www.codewars.com/trainer/peek/javascript/default?dequeue=true',
+      `https://www.codewars.com/trainer/peek/${language}/default?dequeue=true`,
       {
         headers: {
           authorization: authToken.jwt,
