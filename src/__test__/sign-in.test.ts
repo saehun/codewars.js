@@ -6,10 +6,7 @@ const { parseAuthenticityToken, parseDashboard } = __test__;
 
 describe('sign-in', () => {
   it('can parse AuthenticationToken', async () => {
-    const html = await fs.readFile(
-      path.join(__dirname, 'fixtures', 'signin.response.txt'),
-      'utf-8'
-    );
+    const html = await fs.readFile(path.join(__dirname, 'data', 'signin.response.txt'), 'utf-8');
     expect(parseAuthenticityToken(html)).toEqual(
       'xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx'
     );

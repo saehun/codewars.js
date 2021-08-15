@@ -1,0 +1,38 @@
+{
+  "success": true,
+  "languageName": "javascript",
+  "label": "JavaScript",
+  "solutionId": "6118c124356703003302b9ec",
+  "icon": "javascript",
+  "setup": "function cakes(recipe, available) {\n  // TODO: insert code\n}",
+  "exampleFixture": "describe('description example', function() {\n  var recipe, available;\n\n  it('pass example tests', function() {\n    recipe = {flour: 500, sugar: 200, eggs: 1};\n    available = {flour: 1200, sugar: 1200, eggs: 5, milk: 200};\n    Test.assertEquals(cakes(recipe, available), 2, 'Wrong result for example #1');\n    \n    recipe = {apples: 3, flour: 300, sugar: 150, milk: 100, oil: 100};\n    available = {sugar: 500, flour: 2000, milk: 2000};\n    Test.assertEquals(cakes(recipe, available), 0, 'Wrong result for example #2');\n  });\n});",
+  "workingCode": null,
+  "workingFixture": null,
+  "recentlyAttempted": null,
+  "activeVersion": "8.x",
+  "languageVersions": [
+    {
+      "id": "8.x",
+      "label": "Node v8.1.3",
+      "supported": true
+    },
+    {
+      "id": "8.x/babel",
+      "label": "Node v8.1.3/Babel",
+      "supported": true
+    },
+    {
+      "id": "10.x",
+      "label": "Node v10.x",
+      "supported": false
+    },
+    {
+      "id": "12.x",
+      "label": "Node v12.x",
+      "supported": false
+    }
+  ],
+  "testFramework": "cw-2",
+  "package": "",
+  "fixture": "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\n--dPSNmSsVceo4iUaKnGOT4A==--u"
+}
