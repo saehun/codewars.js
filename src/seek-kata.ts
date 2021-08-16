@@ -15,7 +15,7 @@ function seekKata(authToken: AuthToken, language: Language = 'javascript') {
         },
       }
     );
-    return schema.validateSync(data) as KataInfo;
+    return [authToken, schema.validateSync(data) as KataInfo] as const;
   });
 }
 
