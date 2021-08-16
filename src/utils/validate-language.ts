@@ -53,4 +53,5 @@ const LANGUAGES = [
   'perl',
   'commonlisp',
   'forth',
+  'vb',
 ];
