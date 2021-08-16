@@ -1,0 +1,29 @@
+{
+  "strategy": "default",
+  "id": "52685f7382004e774f0001f7",
+  "name": "Human Readable Time",
+  "description": "Write a function, which takes a non-negative integer (seconds) as input and returns the time in a human-readable format (`HH:MM:SS`)\n\n* `HH` = hours, padded to 2 digits, range: 00 - 99\n* `MM` = minutes, padded to 2 digits, range: 00 - 59\n* `SS` = seconds, padded to 2 digits, range: 00 - 59\n\nThe maximum time never exceeds 359999 (`99:59:59`)\n\nYou can find some examples in the test fixtures.",
+  "systemTags": [
+    "Algorithms",
+    "Dates/Time",
+    "Data Types",
+    "Mathematics",
+    "Logic",
+    "Numbers"
+  ],
+  "rank": -5,
+  "rankName": "5 kyu",
+  "href": "/kata/52685f7382004e774f0001f7",
+  "languages": {
+    "clojure": false,
+    "csharp": false,
+    "elixir": false,
+    "haskell": false,
+    "java": false,
+    "javascript": false,
+    "julia": false,
+    "php": false,
+    "python": false,
+    "typescript": false
+  }
+}
