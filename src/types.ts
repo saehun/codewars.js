@@ -15,6 +15,18 @@ export type KataInfo = {
   href: string; // '/kata/5324945e2ece5e1f32000370';
 };
 
+export type Meta = {
+  strategy: string;
+  languages: Record<Language, boolean>;
+  id: string;
+  name: string;
+  description: string;
+  systemTags: string[];
+  rank: number;
+  rankName: string;
+  href: string;
+};
+
 export type Language =
   | 'crystal'
   | 'csharp'
@@ -61,3 +73,42 @@ export type Language =
   | 'perl'
   | 'commonlisp'
   | 'forth';
+
+export type SessionData = {
+  success: boolean;
+  languageName: string;
+  label: string;
+  solutionId: string;
+  icon: string;
+  setup: string;
+  exampleFixture: string;
+  workingCode: null | string;
+  workingFixture: null | string;
+  recentlyAttempted: null | string;
+  activeVersion: string;
+  languageVersions: {
+    '0': {
+      id: string;
+      label: string;
+      supported: boolean;
+    };
+    '1': {
+      id: string;
+      label: string;
+      supported: boolean;
+    };
+    '2': {
+      id: string;
+      label: string;
+      supported: boolean;
+    };
+    '3': {
+      id: string;
+      label: string;
+      supported: boolean;
+    };
+  };
+  testFramework: string;
+  package: string;
+  fixture: string;
+};

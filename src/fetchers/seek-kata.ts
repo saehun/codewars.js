@@ -1,5 +1,5 @@
-import Fetcher from './core/Fetcher';
-import { AuthToken, KataInfo, Language } from './types';
+import Fetcher from '../core/Fetcher';
+import { AuthToken, KataInfo, Language } from '../types';
 import * as yup from 'yup';
 
 function seekKata(authToken: AuthToken, language: Language = 'javascript') {

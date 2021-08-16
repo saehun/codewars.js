@@ -1,7 +1,7 @@
-import Fetcher from './core/Fetcher';
-import { AuthToken, KataInfo, Language } from './types';
-import { withDom } from './core/withDom';
-import { validateLanguage } from './utils/validate-language';
+import Fetcher from '../core/Fetcher';
+import { AuthToken, KataInfo, Language } from '../types';
+import { withDom } from '../core/withDom';
+import { validateLanguage } from '../utils/validate-language';
 
 function getSupportedLanguages([authToken, kataInfo]: [AuthToken, KataInfo]) {
   return Fetcher.of(async client => {

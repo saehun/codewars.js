@@ -1,5 +1,5 @@
 import { createHttpClient } from './core/http';
-import signIn from './sign-in';
+import signIn from './fetchers/sign-in';
 
 (async () => {
   const client = createHttpClient();

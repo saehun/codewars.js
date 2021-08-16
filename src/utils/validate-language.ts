@@ -54,4 +54,6 @@ const LANGUAGES = [
   'commonlisp',
   'forth',
   'vb',
+  'haxe',
+  'solidity',
 ];

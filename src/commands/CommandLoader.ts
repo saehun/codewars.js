@@ -1,12 +1,14 @@
 import * as chalk from 'chalk';
 import { Command } from 'commander';
-import { NextAction } from '../actions';
+import { NextAction, GenerateAction } from '../actions';
 import { ERROR_PREFIX } from '../utils/ui';
 import { NextCommand } from './NextCommand';
+import { GenerateCommand } from './GenerateCommand';
 
 export class CommandLoader {
   public static load(program: Command): void {
     new NextCommand(new NextAction()).load(program);
+    new GenerateCommand(new GenerateAction()).load(program);
     this.handleInvalidCommand(program);
   }
 

@@ -1,8 +1,8 @@
-import Fetcher from './core/Fetcher';
+import Fetcher from '../core/Fetcher';
 import { assert } from '@sindresorhus/is';
-import { credential } from './core/credentials';
-import { withDom } from './core/withDom';
-import { AuthToken } from './types';
+import { credential } from '../core/credentials';
+import { withDom } from '../core/withDom';
+import { AuthToken } from '../types';
 
 const fetchSignInPage = () =>
   Fetcher.of(async client => {
