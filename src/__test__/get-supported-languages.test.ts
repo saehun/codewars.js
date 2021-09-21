@@ -1,4 +1,4 @@
-import { __test__ } from '../get-supported-languages';
+import { __test__ } from '../fetchers/get-supported-languages';
 import * as fs from 'fs/promises';
 
 describe('get-supported-languages', () => {
