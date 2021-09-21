@@ -39,7 +39,7 @@
   },
   "dependencies": {
     "@sindresorhus/is": "^4.0.1",
-    "axios": "^0.21.1",
+    "axios": "^0.21.2",
     "axios-cookiejar-support": "^1.0.1",
     "chai": "^4.3.4",
     "chalk": "^4.1.1",
